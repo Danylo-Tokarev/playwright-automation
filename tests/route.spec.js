@@ -11,5 +11,5 @@ const { test , expect } = require("@playwright/test");
      await route.fulfill({ status: 404 });
    });
         await page.goto('https://demo.playwright.dev/api-mocking');
-   await expect(page.getByText('Strawberry')).toBeVisible();
-   })   
+   await expect(page.getByText('Strawberry')).not.toBeVisible();
+   }); 
