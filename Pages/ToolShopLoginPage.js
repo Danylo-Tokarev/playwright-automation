@@ -10,7 +10,7 @@ class ToolShopLoginPage {
   }
 
   async goto () {
-    await this.page.goto('https://practicesoftwaretesting.com/auth/login');
+    await this.page.goto('/auth/login');
   }
 
   async login (useremail,password) {

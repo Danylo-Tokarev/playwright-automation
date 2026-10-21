@@ -10,12 +10,12 @@ test.describe('ToolShop login', () => {
   });
 
   test('valid login redirects to dashboard', async ({ page }) => {
-    await loginPage.login('admin@practicesoftwaretesting.com', 'welcome01');
+       await loginPage.login(process.env.USER_EMAIL, process.env.USER_PASSWORD);
     await expect(page).toHaveURL(/admin\/dashboard/);
   });
 
   test('invalid login shows error', async ({ page }) => {
-    await loginPage.login('admin@practicesoftwaretesting.com', 'wrongpassword');
+    await loginPage.login('admin@practicesoftwaretesting.com', 'welcome011');
     await expect(loginPage.loginError).toBeVisible();
     await expect(loginPage.loginError).toHaveText('Invalid email or password');
   });
