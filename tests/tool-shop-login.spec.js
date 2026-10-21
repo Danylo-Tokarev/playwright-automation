@@ -10,13 +10,11 @@ test.describe('ToolShop login', () => {
   });
 
   test('valid login redirects to dashboard', async ({ page }) => {
-    // goto уже сделан в beforeEach — сразу логинимся
     await loginPage.login('admin@practicesoftwaretesting.com', 'welcome01');
     await expect(page).toHaveURL(/admin\/dashboard/);
   });
 
   test('invalid login shows error', async ({ page }) => {
-    // тоже без goto — сразу к делу
     await loginPage.login('admin@practicesoftwaretesting.com', 'wrongpassword');
     await expect(loginPage.loginError).toBeVisible();
     await expect(loginPage.loginError).toHaveText('Invalid email or password');
