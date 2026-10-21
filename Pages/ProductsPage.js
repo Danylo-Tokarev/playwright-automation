@@ -9,7 +9,7 @@ class ProductsPage {
     this.emptySearch = page.locator('[data-test="no-results"]');
   }
   async goto() {
-    await this.page.goto('https://practicesoftwaretesting.com');
+    await this.page.goto('/');
   }
 async search(item) {
     await this.searchInput.fill(item);
