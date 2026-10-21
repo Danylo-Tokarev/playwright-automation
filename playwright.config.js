@@ -37,26 +37,19 @@ export default defineConfig({
   /* Configure projects for major browsers */
 projects: [
   { name: 'api', testMatch: /.*\.api\.spec\.js/ },
-  // 1. Логинится один раз и сохраняет состояние
-  { name: 'setup', testMatch: /.*\.setup\.js/ },
-
-  // 2. Браузеры ждут setup и грузят сохранённое состояние
   {
     name: 'chromium',
-    use: { ...devices['Desktop Chrome'], storageState: 'playwright/.auth/user.json' },
-    dependencies: ['setup'],
+    use: { ...devices['Desktop Chrome'] },
     testIgnore: /.*\.api\.spec\.js/,
   },
   {
     name: 'firefox',
-    use: { ...devices['Desktop Firefox'], storageState: 'playwright/.auth/user.json' },
-    dependencies: ['setup'],
+    use: { ...devices['Desktop Firefox'] },
     testIgnore: /.*\.api\.spec\.js/,
   },
   {
     name: 'webkit',
-    use: { ...devices['Desktop Safari'], storageState: 'playwright/.auth/user.json' },
-    dependencies: ['setup'],
+    use: { ...devices['Desktop Safari'] },
     testIgnore: /.*\.api\.spec\.js/,
   },
 ],
