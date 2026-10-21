@@ -17,7 +17,7 @@ test('put', async ({ request }) => {
     expect(response.status()).toBe(200);
 
     const body = await response.json();
-    expect(body.title).toBe('ЧУШЬ');
+    expect(body.title).toBe('updated');
 });
 
 test('patch', async ({ request }) => {
