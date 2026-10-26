@@ -11,6 +11,7 @@ class ToolShopLoginPage {
 
   async goto () {
     await this.page.goto('/auth/login');
+    await this.email.waitFor();
   }
 
   async login (useremail,password) {
