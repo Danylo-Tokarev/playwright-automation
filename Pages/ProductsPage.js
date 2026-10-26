@@ -1,5 +1,3 @@
-const { expect } = require('@playwright/test');
-
 class ProductsPage {
   constructor(page) {
     this.page = page;
